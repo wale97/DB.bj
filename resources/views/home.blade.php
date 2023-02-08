@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{config('app.name', 'Destination-Benin')}}</title>
+   <!-- <link href="{{asset('css/bootstrap/bootstrap.min.css')}}" rel="stylesheet">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{asset('css/sitestyle.css')}}">
+</head>
+<body class="bg-light">
+      <div class="container mb-4">
+          @include('partials.header')
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" style="box-shadow: rgb(85, 85, 85) 1px 1px 12px;">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img src={{asset('images/7.jfif')}} class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <button type="button" class="btn btn-dark">Voir</button>
+                    <p>Some representative placeholder content for the first slide.</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src={{asset('images/5.jfif')}} class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <button type="button" class="btn btn-dark">Voir</button>
+                    <p>Some representative placeholder content for the second slide.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src={{asset('images/6.jfif')}} class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <button type="button" class="btn btn-dark">Voir</button>
+                    <p>Some representative placeholder content for the third slide.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <div class="group-card container mt-4 bg-light">
+              <div class="card mb-4 text-center" style="width: 18rem;">
+                <img class="card-img-top" src={{asset('images/1.jfif')}} alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Histoire</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-danger">Lire la suite</a>
+                </div>
+              </div>
+              <div class="card mb-4 text-center" style="width: 18rem;">
+                <img class="card-img-top" src={{asset('images/3.jfif')}} alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title text-truncate">Divertissements</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-danger">Lire la suite</a>
+                </div>
+              </div>
+              <div class="card mb-4 text-center" style="width: 18rem;">
+                <img class="card-img-top" src={{asset('images/4.jfif')}} alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Culture</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-danger">Lire la suite</a>
+                </div>
+              </div>
+        </div>
+      </div>
+      @include('partials.groupcard2')
+
+<div class="container bg-light text-center">
+  <h3 class="publications text-center mb-4">Nos Publications</h3>
+        <div class="row gap-3 d-flex justify-content-center align-items-center">
+            <div class="col-3 card m-4" style="width: 21rem;">
+            <img src={{asset('images/4.jfif')}} class="card-img-top w-100" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="col-3 card m-4" style="width: 21rem;">
+            <img src={{asset('images/4.jfif')}} class="card-img-top" alt="..." style="max-width: 100%; width: 100%;">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+      </div>
+      <a href={{route('decouvrir')}} class="btn btn-danger m-4">Voir plus</a>
+    </div>
+
+        
+
+      @include('partials.footer')
+<div>
+<!--<script>
+  $(document).ready(function(){
+$('carousel').carousel({
+      interval:2
+    })
+  });
+</script>-->
+    
+</body>
+<script src="{{asset('js/jquery-3.3.1.js')}}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</html>
