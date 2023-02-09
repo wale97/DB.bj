@@ -9,7 +9,7 @@
 <div class="articles">
 
 @foreach($articles as $article)
- <div class="card mb-3 text-center" style="width:380px;height:450px;overflow:hidden;box-shadow: rgb(85, 85, 85) 1px 1px 12px;">
+ <div class="card mb-3 text-center" style="width:380px;height:450px;overflow:hidden;">
     <img src='{{asset('storage/'.$article->image)}}' class="card-img-top" alt="..." style="width:100%;height:250px;">
     <div class="card-body">
       <h5 class="card-title"><a href={{route('voir-article', ['id'=>$article->id])}}>{{$article->title}}</a></h5>
@@ -21,7 +21,11 @@
 @endforeach
 
 </div>
-
+<div class="links container mt-4 mb-4">
+<div class=" row mt-4 mb-4" style="color:red;">
+  {{$articles->links()}}
+</div>
+</div>
 
 
 @else

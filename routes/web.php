@@ -47,22 +47,18 @@ Route::get('sortir',[SortirController::class, 'sortir'])->name('sortir');
 Route::get('dormir',[DormirController::class, 'dormir'])->name('dormir');
 Route::get('test',[TestController::class, 'test'])->name('test');
 
+//Article's Page
 Route::get('articles', [ArticleController::class, 'voir'])->name('voir');
+/*Route::get('articles', [ArticleController::class, 'index'])->name('index');*/
 
 
-/*Route::get('/articles/{id}', function($id){
-    return view ('article',[
-        'article'=>Article::voir($id)
-    ]);
-});*/
-
+//get one article
 Route::get('/article/{id}', [ArticleController::class, 'voir_article'])->name('voir-article');
-
 
 //pagination
 
-/*route::get('articles', [ArticleController::class, 'articlepaginate'])->name('articlepage');*/
 
+//Contact Page
 Route::get('contact', [ContactController::class, 'contacter'])->name('contacter');
 Route::post('contact', [ContactController::class, 'envoi'])->name('contact.envoi');
 
