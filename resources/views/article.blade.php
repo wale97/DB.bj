@@ -1,17 +1,17 @@
 @extends('layouts.content')
 
 @section('content')
-    <div class="container m-4">
+    <div class="container mb-4 mt-4 card-art">
      <div class="mb-4"> 
-          <h4 class="text-center m-4">{!! $article->title!!}</h4> 
+          <h4 class="text-center mt-4 mb-4">{!! $article->title!!}</h4> 
      </div>
         <div class="row">
             <div class="col-12 mb-3">
                 <div class="card">
                         <img src={{asset('storage/'.$article->image)}} alt="">
-                    <div class="card-body">
-                        {!! $article->resume !!}
-                    </div>                    
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{!! $article->resume !!}</li>
+                    </ul>                   
                     <div class="card-body">
                         {!! $article->content !!}
                     </div>                    

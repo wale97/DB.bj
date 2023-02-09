@@ -109,7 +109,11 @@ ul{
     flex-wrap: wrap;
     /*display: grid;
     gap:50px 50px;*/
-
+}
+.card-art{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .card{
     box-shadow: rgb(85, 85, 85) 1px 1px 12px;
