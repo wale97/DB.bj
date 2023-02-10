@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Paginate;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,12 +12,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    /*public function index()
     {
         return view ('home');
+    }*/
+
+    public function index()
+    {
+        
+        $articles = Article::latest()->paginate(3);
+        return view ('home', ['articles'=>$articles]);
+        
+        /*$articles=DB::select('select * from articles');
+        return view ('articles', ['articles'=>$articles]);*/
     }
-
-
 
     /**
      * Show the form for creating a new resource.

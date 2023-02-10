@@ -52,7 +52,7 @@
               </button>
             </div>
             <div class="group-card container mt-4 bg-light">
-              <div class="card mb-4 text-center" style="width: 18rem;">
+              <div class="card mb-4 text-center" style="width: 18rem;margin:3px;"">
                 <img class="card-img-top" src={{asset('images/1.jfif')}} alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Histoire</h5>
@@ -60,7 +60,7 @@
                   <a href="#" class="btn btn-danger">Lire la suite</a>
                 </div>
               </div>
-              <div class="card mb-4 text-center" style="width: 18rem;">
+              <div class="card mb-4 text-center" style="width: 18rem;margin:3px;"">
                 <img class="card-img-top" src={{asset('images/3.jfif')}} alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title text-truncate">Divertissements</h5>
@@ -68,7 +68,7 @@
                   <a href="#" class="btn btn-danger">Lire la suite</a>
                 </div>
               </div>
-              <div class="card mb-4 text-center" style="width: 18rem;">
+              <div class="card mb-4 text-center" style="width: 18rem;margin:3px";">
                 <img class="card-img-top" src={{asset('images/4.jfif')}} alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Culture</h5>
@@ -80,24 +80,26 @@
       </div>
       @include('partials.groupcard2')
 
-<div class="container bg-light text-center">
-  <h3 class="publications text-center mb-4">Nos Publications</h3>
-        <div class="row gap-3 d-flex justify-content-center align-items-center">
-            <div class="col-3 card m-4" style="width: 21rem;">
-            <img src={{asset('images/4.jfif')}} class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-          <div class="col-3 card m-4" style="width: 21rem;">
-            <img src={{asset('images/4.jfif')}} class="card-img-top" alt="..." style="max-width: 100%; width: 100%;">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
+      <div class="container bg-light text-center mb-4 mt-4">
+        <h3 class="publications text-center mb-4 mt-4">Nos Publications</h3>
+        <div class="group-card container mt-4 bg-light">
+          @if(count($articles)>0)
+          @foreach($articles as $article)
+            <div class="card mb-4 mt-4 text-center" style="width: 18rem;margin:3px;">
+              <img class="card-img-top" src={{asset('storage/'.$article->image)}} alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{$article->title}}</h5>
+                  <p class="card-text">{{$article->resume}}</p>
+                  <a href="#" class="btn btn-danger">Lire la suite</a>
+             </div>
+        </div>
+    
+          @endforeach
+          @else
+          @endif
       </div>
-      <a href={{route('decouvrir')}} class="btn btn-danger m-4">Voir plus</a>
-    </div>
+      <a href={{route('voir')}} class="btn btn-danger text-center">Tous les articles</a>
+
 
         
 
