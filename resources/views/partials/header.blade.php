@@ -13,6 +13,9 @@
           <a class="nav-link" href={{route('voir')}} style="margin-left: 20px;">Découvrir</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href={{route('news')}} style="margin-left: 20px;">News</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{{route('biblio')}}" style="margin-left: 20px;">Bibliothèque</a>
         </li>
         <li class="nav-item">

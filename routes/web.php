@@ -4,6 +4,7 @@ use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\DormirController;
 use App\Http\Controllers\SortirController;
@@ -49,11 +50,12 @@ Route::get('test',[TestController::class, 'test'])->name('test');
 
 //Article's Page
 Route::get('articles', [ArticleController::class, 'voir'])->name('voir');
-/*Route::get('articles', [ArticleController::class, 'index'])->name('index');*/
-
-
 //get one article
 Route::get('/article/{id}', [ArticleController::class, 'voir_article'])->name('voir-article');
+//News' page
+Route::get('news', [NewsController::class, 'news'])->name('news');
+//get on new
+Route::get('/new/{id}', [NewsController::class, 'voir_news'])->name('voir-news');
 
 //pagination
 
