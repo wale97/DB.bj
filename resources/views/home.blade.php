@@ -20,27 +20,17 @@
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>
               <div class="carousel-inner">
+                @if(count($news)>0)
+                @foreach ($news as $new)
                 <div class="carousel-item active" data-bs-interval="10000">
-                  <img src={{asset('images/7.jfif')}} class="d-block w-100" alt="...">
+                  <img src={{asset('storage/'.$new->image)}} class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
-                    <button type="button" class="btn btn-dark">Voir</button>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <a href={{route('voir-news', ['id'=>$new->id])}} class="btn btn-danger text-center">Voir</a>
+                    <p>{{$new->resume}}</p>
                   </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src={{asset('images/5.jfif')}} class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <button type="button" class="btn btn-dark">Voir</button>
-                    <p>Some representative placeholder content for the second slide.</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src={{asset('images/6.jfif')}} class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <button type="button" class="btn btn-dark">Voir</button>
-                    <p>Some representative placeholder content for the third slide.</p>
-                  </div>
-                </div>
+                @endforeach
+                @endif
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -79,7 +69,6 @@
         </div>
       </div>
       @include('partials.groupcard2')
-
       <div class="container bg-light text-center mb-4 mt-4">
         <h3 class="publications text-center mb-4 mt-4">Nos Publications</h3>
         <div class="group-card container mt-4 bg-light">
@@ -105,13 +94,7 @@
 
       @include('partials.footer')
 <div>
-<!--<script>
-  $(document).ready(function(){
-$('carousel').carousel({
-      interval:2
-    })
-  });
-</script>-->
+
     
 </body>
 <script src="{{asset('js/jquery-3.3.1.js')}}"></script>

@@ -39,9 +39,9 @@ nav{
     display:flex;
     flex-wrap:wrap;
 }
-footer{
+/*footer{
     background-color: dimgray;
-}
+}*/
 .footer-col{
     width:25%;
     padding:0 15px;
@@ -104,6 +104,13 @@ ul{
     flex-shrink: 0;    
 }
 .articles{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /*display: grid;
+    gap:50px 50px;*/
+}
+.news{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

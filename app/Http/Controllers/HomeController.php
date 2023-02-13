@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Paginate;
+use App\Models\News;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
@@ -21,11 +22,15 @@ class HomeController extends Controller
     {
         
         $articles = Article::latest()->paginate(3);
-        return view ('home', ['articles'=>$articles]);
+        $news = News::latest()->paginate(3);
+        return view ('home', ['articles'=>$articles, 
+                                'news'=>$news
+    ]);
         
         /*$articles=DB::select('select * from articles');
         return view ('articles', ['articles'=>$articles]);*/
     }
+
 
     /**
      * Show the form for creating a new resource.

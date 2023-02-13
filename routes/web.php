@@ -48,6 +48,7 @@ Route::get('sortir',[SortirController::class, 'sortir'])->name('sortir');
 Route::get('dormir',[DormirController::class, 'dormir'])->name('dormir');
 Route::get('test',[TestController::class, 'test'])->name('test');
 
+
 //Article's Page
 Route::get('articles', [ArticleController::class, 'voir'])->name('voir');
 //get one article
