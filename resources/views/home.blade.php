@@ -22,7 +22,7 @@
               <div class="carousel-inner">
                 @if(count($news)>0)
                 @foreach ($news as $new)
-                <div class="carousel-item active" data-bs-interval="10000">
+                <div class="carousel-item active" data-bs-interval="1000">
                   <img src={{asset('storage/'.$new->image)}} class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <a href={{route('voir-news', ['id'=>$new->id])}} class="btn btn-danger text-center">Voir</a>
@@ -69,6 +69,7 @@
         </div>
       </div>
       @include('partials.groupcard2')
+
       <div class="container bg-light text-center mb-4 mt-4">
         <h3 class="publications text-center mb-4 mt-4">Nos Publications</h3>
         <div class="group-card container mt-4 bg-light">
@@ -93,8 +94,7 @@
         
 
       @include('partials.footer')
-<div>
-
+    </div>
     
 </body>
 <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
