@@ -13,16 +13,11 @@
 <body class="bg-light">
       <div class="container mb-4">
           @include('partials.header')
-            <div id="carouselExampleDark" class="carousel carousel-dark slide" style="box-shadow: rgb(85, 85, 85) 1px 1px 12px;">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
                 @if(count($news)>0)
                 @foreach ($news as $new)
-                <div class="carousel-item active" data-bs-interval="1000">
+                <div class="carousel-item active" data-bs-interval="5000">
                   <img src={{asset('storage/'.$new->image)}} class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <a href={{route('voir-news', ['id'=>$new->id])}} class="btn btn-danger text-center">Voir</a>
@@ -69,7 +64,6 @@
         </div>
       </div>
       @include('partials.groupcard2')
-
       <div class="container bg-light text-center mb-4 mt-4">
         <h3 class="publications text-center mb-4 mt-4">Nos Publications</h3>
         <div class="group-card container mt-4 bg-light">
@@ -83,19 +77,13 @@
                   <a href="#" class="btn btn-danger">Lire la suite</a>
              </div>
         </div>
-    
           @endforeach
           @else
           @endif
       </div>
       <a href={{route('voir')}} class="btn btn-danger text-center">Tous les articles</a>
-
-
-        
-
       @include('partials.footer')
     </div>
-    
 </body>
 <script src="{{asset('js/jquery-3.3.1.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>

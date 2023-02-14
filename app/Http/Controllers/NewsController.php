@@ -16,13 +16,13 @@ class NewsController extends Controller
     {
         //
     }
-
-    public function news(){
-
+    //Get all the news from database and pass them to the news view
+    public function news()
+    {
         $news = News::latest()->paginate(3);
         return view ('news', ['news'=>$news]);
     }
-
+    //Get one news by its id and pass it to the article view
     public function voir_news($id)
     {
         $new = News::where('id', '=', $id)->first();
@@ -31,7 +31,6 @@ class NewsController extends Controller
             return view('new', array('new'=>$new));
         }
     }
-
     /**
      * Show the form for creating a new resource.
      *

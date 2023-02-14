@@ -17,18 +17,14 @@ class HomeController extends Controller
     {
         return view ('home');
     }*/
-
+//Passing latest news and articles to the home view by grou
     public function index()
     {
-        
         $articles = Article::latest()->paginate(3);
         $news = News::latest()->paginate(3);
         return view ('home', ['articles'=>$articles, 
                                 'news'=>$news
     ]);
-        
-        /*$articles=DB::select('select * from articles');
-        return view ('articles', ['articles'=>$articles]);*/
     }
 
 

@@ -15,32 +15,13 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      * 
      */
-
-
-    /*Create the function that will be added to
-     the route for the pagination*/
-
-    /*public function index()
-    {
-        $data = Article::paginate(3);
-        return view('articles', compact('data'));
-    }*/
-
-    //Get all the articles from database
-
+    //Get all the articles from database and pass them to the article view
     public function voir()
-    {
-        
+    {    
         $articles = Article::latest()->paginate(3);
-        return view ('articles', ['articles'=>$articles]);
-        
-        /*$articles=DB::select('select * from articles');
-        return view ('articles', ['articles'=>$articles]);*/
+        return view ('articles', ['articles'=>$articles]);   
     }
-
-
-    //Get one article by his id and display it on article page
-
+    //Get one article by its id and pass it to the article view
     public function voir_article($id)
     {
         $article = Article::where('id', '=', $id)->first();
@@ -49,8 +30,6 @@ class ArticleController extends Controller
             return view('article', array('article'=>$article));
         }
     }
-
-
     /**
      * Show the form for creating a new resource.
      *
