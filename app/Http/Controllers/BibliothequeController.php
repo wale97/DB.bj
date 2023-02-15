@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BibliothequeController extends Controller
 {
@@ -13,7 +14,11 @@ class BibliothequeController extends Controller
      */
     public function index()
     {
-        //
+        $articles = DB::select('select * from articles');
+        $news = DB::select('select * from news');
+        return view ('bibliotheque', ['articles'=>$articles],
+                                        ['news'=>$news]);
+
     }
 
     public function biblio()

@@ -17,7 +17,7 @@
               <div class="carousel-inner">
                 @if(count($news)>0)
                 @foreach ($news as $new)
-                <div class="carousel-item active" data-bs-interval="5000">
+                <div class="carousel-item active" data-bs-interval="3000">
                   <img src={{asset('storage/'.$new->image)}} class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <a href={{route('voir-news', ['id'=>$new->id])}} class="btn btn-danger text-center">Voir</a>
@@ -49,6 +49,14 @@
                 <img class="card-img-top" src={{asset('images/3.jfif')}} alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title text-truncate">Divertissements</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-danger">Lire la suite</a>
+                </div>
+              </div>
+              <div class="card mb-4 text-center" style="width: 18rem;margin:3px";">
+                <img class="card-img-top" src={{asset('images/4.jfif')}} alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Culture</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   <a href="#" class="btn btn-danger">Lire la suite</a>
                 </div>

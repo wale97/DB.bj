@@ -20,7 +20,7 @@ class HomeController extends Controller
 //Passing latest news and articles to the home view by grou
     public function index()
     {
-        $articles = Article::latest()->paginate(3);
+        $articles = Article::latest()->paginate(4);
         $news = News::latest()->paginate(3);
         return view ('home', ['articles'=>$articles, 
                                 'news'=>$news
